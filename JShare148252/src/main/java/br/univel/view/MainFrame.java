@@ -11,6 +11,8 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 
 public class MainFrame extends JFrame {
 
@@ -55,11 +57,12 @@ public class MainFrame extends JFrame {
 		gbl_pnlLeft.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		pnlLeft.setLayout(gbl_pnlLeft);
 		
-		JButton btnSeach = new JButton("New button");
+		JButton btnSeach = new JButton("");
+		btnSeach.setIcon(new ImageIcon(MainFrame.class.getResource("/icons/64/search-icon.png")));
 		btnSeach.setToolTipText("Pesquisar Arquivos");
 		GridBagConstraints gbc_btnSeach = new GridBagConstraints();
 		gbc_btnSeach.insets = new Insets(0, 0, 5, 0);
-		gbc_btnSeach.anchor = GridBagConstraints.NORTHWEST;
+		gbc_btnSeach.anchor = GridBagConstraints.NORTH;
 		gbc_btnSeach.gridx = 0;
 		gbc_btnSeach.gridy = 0;
 		pnlLeft.add(btnSeach, gbc_btnSeach);
