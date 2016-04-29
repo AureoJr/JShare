@@ -11,13 +11,20 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.event.ActionListener;
+import java.util.Map;
+
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 
 public class MainFrame extends JFrame {
 
+	private static final long serialVersionUID = 1L;
+
 	private JPanel contentPane;
 
+	private Map<String, JPanel> cacheScreen;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -38,6 +45,7 @@ public class MainFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public MainFrame() {
+		setTitle("JShare");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 606, 433);
 		contentPane = new JPanel();
@@ -99,4 +107,17 @@ public class MainFrame extends JFrame {
 		pnlLeft.add(btnConfigurations, gbc_btnConfigurations);
 	}
 
+//	public void openScreen(String screenName){
+//		final AbstractFrame content = new WindowManager(screenName);
+//		content.configure();
+//		
+//		if(cacheScreen.get(screenName) == null){
+//			//Adicionar Nova Tela 
+//			cacheScreen.put(screenName, content);
+//			
+//		}
+//		
+//		
+//	}
+	
 }
