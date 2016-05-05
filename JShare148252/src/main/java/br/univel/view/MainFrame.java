@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import br.univel.view.frames.HomeFrame;
+
 import java.awt.GridBagLayout;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -16,6 +19,7 @@ import java.util.Map;
 
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
+import javax.swing.JScrollPane;
 
 public class MainFrame extends JFrame {
 
@@ -55,6 +59,12 @@ public class MainFrame extends JFrame {
 		
 		JPanel pnlCenter = new JPanel();
 		contentPane.add(pnlCenter, BorderLayout.CENTER);
+		pnlCenter.setLayout(new BorderLayout(0, 0));
+		
+		JScrollPane mainScrollPane = new JScrollPane();
+		pnlCenter.add(mainScrollPane, BorderLayout.CENTER);
+		HomeFrame home = new HomeFrame();
+		mainScrollPane.setViewportView(home);
 		
 		JPanel pnlLeft = new JPanel();
 		contentPane.add(pnlLeft, BorderLayout.WEST);
@@ -107,17 +117,17 @@ public class MainFrame extends JFrame {
 		pnlLeft.add(btnConfigurations, gbc_btnConfigurations);
 	}
 
-//	public void openScreen(String screenName){
-//		final AbstractFrame content = new WindowManager(screenName);
-//		content.configure();
-//		
-//		if(cacheScreen.get(screenName) == null){
-//			//Adicionar Nova Tela 
-//			cacheScreen.put(screenName, content);
-//			
-//		}
-//		
-//		
-//	}
+	public void openScreen(String screenName){
+		final AbstractFrame content = new WindowManager(screenName);
+		content.configure();
+		
+		if(cacheScreen.get(screenName) == null){
+			//Adicionar Nova Tela 
+			cacheScreen.put(screenName, content);
+			
+		}
+		
+		
+	}
 	
 }
