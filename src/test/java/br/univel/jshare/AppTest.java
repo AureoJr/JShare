@@ -1,4 +1,4 @@
-package br.univel.JShare148252;
+package br.univel.jshare;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
